@@ -30,9 +30,9 @@ $$u_{safe}^* = \min_{u \in \mathbb{R}^3} \frac{1}{2} ||u - u_{nom}||^2$$
 ## 🚀 Simulation Results
 The system was validated in **MATLAB/Simulink R2025b** with a swarm of $N=4$ agents.
 
-**Case Study A (Balanced):** The swarm successfully negotiated a cluster of 6 obstacles, splitting and regrouping while maintaining connectivity links below $R_c = 1.0$ m.
-**Case Study B (Stress Test):** Even with under-damped tuning ($K_d=0.8$) causing oscillations, the CBF filter successfully clamped the states to prevent all collisions.
-**Case Study C (Deadlock):** In a perfectly symmetric scenario where the obstacle size exceeds the communication range, the swarm prioritized safety and connectivity, "freezing" in a safe state rather than breaking formation.
+* **Case Study A (Balanced):** The swarm successfully negotiated a cluster of 6 obstacles, splitting and regrouping while maintaining connectivity links below $R_c = 1.0$ m.
+* **Case Study B (Stress Test):** Even with under-damped tuning ($K_d=0.8$) causing oscillations, the CBF filter successfully clamped the states to prevent all collisions.
+* **Case Study C (Deadlock):** In a perfectly symmetric scenario where the obstacle size exceeds the communication range, the swarm prioritized safety and connectivity, "freezing" in a safe state rather than breaking formation.
 
 ## 🛠️ Requirements
 * **Software:** MATLAB / Simulink R2025b.
