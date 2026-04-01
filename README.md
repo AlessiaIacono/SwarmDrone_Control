@@ -6,11 +6,10 @@ This project implements a decentralized control framework for the safe navigatio
 The primary challenge addressed is the simultaneous management of conflicting objectives: preventing collisions (with static obstacles and other agents) while maintaining network connectivity among swarm members. The method is validated using high-fidelity simulations of the **Crazyflie 2.1** nano-quadrotor dynamic model.
 
 ### Key Features
-**Decentralized Navigation:** Agents navigate toward a target without a centralized computer.
-**Safety Guarantees:** Provides formal mathematical guarantees of forward invariance for the safe set.
-**Topological Elasticity:** Allows the swarm to deform its shape to pass through narrow gaps while maintaining minimal connectivity.
-**Cascaded Control:** Separates high-level trajectory planning from low-level attitude stabilization.
-
+* **Decentralized Swarm Control:** Each agent computes its own control inputs locally, ensuring scalability and robustness.
+* **Safety Guarantees:** Provides formal mathematical assurance of forward invariance for the safe set.
+* **Topological Elasticity:** The swarm deforms its formation shape to pass through narrow gaps while maintaining the minimal connectivity required for coordination.
+* **Realistic Validation:** Tested on a full non-linear 6-DOF dynamic model of the **Crazyflie 2.1** nano-quadrotor.
 ## ⚙️ System Architecture
 The framework follows a three-layer cascaded structure:
 
@@ -21,12 +20,12 @@ The framework follows a three-layer cascaded structure:
 ### Mathematical Formulation
 The safety filter solves the following optimization problem at each time step:
 
-$$u_{safe}^* = \min_{u \in \mathbb{R}^3} \frac{1}{2} ||u - u_{nom}||^2$$ 
+$$u_{safe}^* = \min_{u \in \mathbb{R}^3} \frac{1}{2} ||u - u_{nom}||^2$$
 
-**Subject to:**
-**Safety Barrier (Repulsive):** $\dot{h}_s + \gamma_1 \dot{h}_s + \gamma_2 h_s \ge 0$, where $h_s(x_i) = ||p_i - p_{obs}||^2 - R_{safe}^2 \ge 0$.
-* **Connectivity Barrier (Attractive):** $\dot{h}_c + \gamma_1 \dot{h}_c + \gamma_2 h_c \ge 0$, where $h_c(x_i) = R_c^2 - ||p_i - p_j||^2 \ge 0$[cite: 97, 102].
-* **Actuation Limits:** $||u_i|| \le u_{max}$.
+**Enforced Constraints:**
+* **Safety Barrier (Repulsive):** $\dot{h}_s + \gamma_1 \dot{h}_s + \gamma_2 h_s \ge 0$
+* **Connectivity Barrier (Attractive):** $\dot{h}_c + \gamma_1 \dot{h}_c + \gamma_2 h_c \ge 0$
+* **Actuation Limits:** $||u_i|| \le u_{max}$
 
 ## 🚀 Simulation Results
 The system was validated in **MATLAB/Simulink R2025b** with a swarm of $N=4$ agents.
