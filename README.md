@@ -40,10 +40,10 @@ The system was validated in **MATLAB/Simulink R2025b** with a swarm of $N=4$ age
 * **Hardware Model:** Bitcraze Crazyflie 2.1 parameters.
 
 ## 👥 Authors
-**Alessia Iacono** 
-**Pietro Gennarelli** 
-**Institution:** Università degli Studi di Napoli Federico II
-**Course:** Field and Service Robotics 
+* **Alessia Iacono** 
+* **Pietro Gennarelli** 
+* **Institution:** Università degli Studi di Napoli Federico II
+* **Course:** Field and Service Robotics 
 
 ## 📜 References
 1.  A. D. Ames, et al. "Control Barrier Functions: Theory and Applications," *Proceedings of the IEEE*, 2019.
